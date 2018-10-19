@@ -1,0 +1,33 @@
+        var bmi = {
+            personName: null, //empty
+            personAge: null, //empty
+            personMass: null, //empty
+            personHeight: null, //empty
+
+            //custom consctructor.
+            constructor: function (personName, personAge, personMass, personHeight) {
+                this.personName = personName;
+                this.personAge = personAge;
+                this.personMass = personMass;
+                this.personHeight = personHeight;
+            },
+
+            calculation: function () {
+                var operation = this.personMass / (Math.pow(this.personHeight, 2)) * 10000;
+                var result = this.personName + ' adlı kullanıcı ' + this.personAge +
+                    ' yaşında ve BMI değeri => ' + operation;
+                return result;
+            },
+
+        }
+
+        bmi.constructor('Taylan', 21, 80, 180);
+        var taylanResult = bmi.calculation();
+        console.log(taylanResult);
+
+        bmi.constructor('Ali', 19, 69, 178);
+        var aliResult = bmi.calculation();
+        console.log(aliResult);
+
+        taylanResult > aliResult ? console.log('Taylan\'ın BMI değeri Ali\'nin BMİ değerinden yüksek') :
+            console.log("Ali\'nin BMI değeri Taylan\'ın BMI değerinden yüksek");
